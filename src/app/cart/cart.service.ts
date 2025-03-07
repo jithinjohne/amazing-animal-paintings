@@ -9,20 +9,24 @@ import { Observable } from 'rxjs';
 })
 export class CartService {
 
-  private apiUrl = environment.apiUrl + '/cart';
+  private apiUrl = environment.apiUrl + '/cart'
 
   constructor(private http: HttpClient) { }
 
   addToCart(product: Product) {
-    return this.http.post(this.apiUrl, product);
+    return this.http.post(this.apiUrl, product)
   }
 
   getCartItems(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiUrl);
+    return this.http.get<Product[]>(this.apiUrl)
   }
 
   clearCart() {
-    return this.http.delete(this.apiUrl);
+    return this.http.delete(this.apiUrl)
+  }
+
+  checkout(products: Product[]) {
+    return this.http.post(this.apiUrl, { products })
   }
 
 
