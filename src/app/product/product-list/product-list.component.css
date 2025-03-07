@@ -1,5 +1,6 @@
 .product-card {
     max-width: 150px;
+    margin: 10px;
 }
 
 mat-card:hover {
